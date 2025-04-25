@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchnittKriwa Verein</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        
+        :root {
+            --dark-green: #2d3b31;
+            --bright-green: #9BD770;
+            --neon-green: #a6ff00;
+            --light-green: #c6f68d;
+            --white: #ffffff;
+            --black: #111111;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-green);
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        /* Diagonale Hauptelemente */
+        .diagonal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        .main-diagonal {
+            position: absolute;
+            width: 150%;
+            height: 60%;
+            background-color: var(--bright-green);
+            transform: skew(0deg, -15deg);
+            top: 25%;
+            left: -25%;
+            z-index: -1;
+        }
+        
+        .diagonal-accent {
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background-color: var(--neon-green);
+            transform: skew(0deg, -15deg);
+            top: 55%;
+            left: -5%;
+            z-index: 0;
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+        
+        .diagonal-accent2 {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--neon-green);
+            transform: skew(0deg, -15deg);
+            top: 35%;
+            left: -5%;
+            z-index: 0;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        
+        /* Schnittmuster und Linien */
+        .cut-patterns {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .cut-line {
+            position: absolute;
+            height: 1px;
+            background-color: var(--white);
+        }
+        
+        .dashed-line {
+            border-top: 2px dashed var(--white);
+            width: 200px;
+            position: absolute;
+        }
+        
+        .cut-mark {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .cut-mark::before, .cut-mark::after {
+            content: '';
+            position: absolute;
+            background-color: var(--white);
+        }
+        
+        .cut-mark::before {
+            width: 100%;
+            height: 1px;
+            top: 50%;
+            left: 0;
+        }
+        
+        .cut-mark::after {
+            width: 1px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+        }
+        
+        .scissor-icon {
+            position: absolute;
+            font-size: 24px;
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--neon-green);
+            border-radius: 0;
+            position: relative;
+            margin-right: 15px;
+            transform: skew(-10deg, 0deg);
+            box-shadow: 0 0 20px rgba(166, 255, 0, 0.7);
+        }
+        
+        .logo-icon::before {
+            content: '✂️';
+            position: absolute;
+            font-size: 28px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo-text span {
+            color: var(--bright-green);
+            font-weight: 300;
+        }
+        
+        nav {
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 40px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: all 0.3s;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--neon-green);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--neon-green);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 50px 0;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--bright-green);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--white);
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .hero h1 span {
+            color: var(--neon-green);
+            display: block;
+            position: relative;
+        }
+        
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 8px;
+            background-color: var(--neon-green);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            animation: lineGrow 1.5s ease-out forwards;
+            transform-origin: left;
+        }
+        
+        @keyframes lineGrow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        
+        .hero p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background-color: var(--neon-green);
+            color: var(--dark-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(166, 255, 0, 0.4);
+            transform: skew(-5deg, 0);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover {
+            background-color: var(--light-green);
+            transform: skew(-5deg, 0) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(166, 255, 0, 0.6);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            height: 80%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="white" stroke-width="1"/></svg>') repeat;
+            background-size: 50px;
+            opacity: 0.1;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--bright-green);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--neon-green);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transform: skew(-5deg, 0);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background-color: var(--neon-green);
+            transition: height 0.5s;
+        }
+        
+        .service-card:hover {
+            transform: skew(-5deg, 0) translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--neon-green);
+        }
+        
+        .service-card:hover::before {
+            height: 100%;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: var(--neon-green);
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--bright-green);
+        }
+        
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.02);
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            margin: 50px 0;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+        }
+        
+        .about-img-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--neon-green);
+            transform: skew(-10deg, 0);
+            z-index: 1;
+        }
+        
+        .about-img-content {
+            position: absolute;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            top: 20px;
+            left: 20px;
+            background-color: var(--dark-green);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .about-img-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            filter: grayscale(50%);
+            transition: all 0.5s;
+        }
+        
+        .about-img-content:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .about-content {
+            flex: 1;
+            padding-left: 20px;
+        }
+        
+        .about-subtitle {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--bright-green);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .about-title {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: var(--white);
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--neon-green);
+        }
+        
+        .about-text {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(166, 255, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--neon-green);
+            font-size: 20px;
+        }
+        
+        .feature-text {
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+        
+        .gallery-item:nth-child(2) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(3) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(4) {
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+        
+        .gallery-item:nth-child(5) {
+            grid-column: span 5;
+            grid-row: span 1;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(45, 59, 49, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--white);
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--neon-green);
+        }
+        
+        .contact-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(166, 255, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--neon-green);
+            font-size: 20px;
+        }
+        
+        .contact-info-text {
+            color: var(--white);
+        }
+        
+        .contact-form-container {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--neon-green);
+            z-index: -1;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--neon-green);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            grid-column: span 1;
+        }
+        
+        .footer-logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--neon-green);
+            color: var(--dark-green);
+            transform: translateY(-5px);
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--neon-green);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--neon-green);
+            transform: translateY(-50%);
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-green);
+            padding-left: 20px;
+        }
+        
+        .footer-links a:hover::before {
+            background-color: var(--neon-green);
+        }
+        
+        .bottom-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-rows: repeat(3, 200px);
+            }
+            
+            .gallery-item:nth-child(1) {
+                grid-column: span 6;
+            }
+            
+            .gallery-item:nth-child(2) {
+                grid-column: span 6;
+            }
+            
+            .gallery-item:nth-child(3) {
+                grid-column: span 6;
+            }
+            
+            .gallery-item:nth-child(4) {
+                grid-column: span 6;
+            }
+            
+            .gallery-item:nth-child(5) {
+                grid-column: span 12;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .nav ul {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 200px);
+            }
+            
+            .gallery-item:nth-child(n) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Diagonale Hauptelemente -->
+    <div class="diagonal-container">
+        <div class="main-diagonal"></div>
+        <div class="diagonal-accent"></div>
+        <div class="diagonal-accent2"></div>
+    </div>
+    
+    <!-- Schnittmuster Overlay -->
+    <div class="cut-patterns">
+        <div class="dashed-line" style="top: 15%; left: 10%; transform: rotate(25deg);"></div>
+        <div class="dashed-line" style="top: 35%; left: 30%; transform: rotate(-15deg);"></div>
+        <div class="dashed-line" style="top: 65%; left: 60%; transform: rotate(35deg);"></div>
+        <div class="dashed-line" style="top: 85%; left: 20%; transform: rotate(-30deg);"></div>
+        
+        <div class="cut-mark" style="top: 25%; left: 80%;"></div>
+        <div class="cut-mark" style="top: 45%; left: 15%;"></div>
+        <div class="cut-mark" style="top: 75%; left: 85%;"></div>
+        
+        <i class="fa-solid fa-scissors scissor-icon" style="top: 20%; left: 40%;"></i>
+        <i class="fa-solid fa-scissors scissor-icon" style="top: 60%; left: 70%;"></i>
+        <i class="fa-solid fa-scissors scissor-icon" style="top: 80%; left: 35%;"></i>
+    </div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">SCHNITT<span>KRIWA</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Angebote</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-subtitle">Verein für Schnittkunst</div>
+                <h1>SCHNITT<span>KRIWA</span></h1>
+                <p>Wir sind eine Gemeinschaft leidenschaftlicher Designer und Handwerker, die die Kunst des Schneidens und Nähens für alle zugänglich machen. Tauche ein in die Welt der Kreativität und präzisen Handwerkskunst.</p>
+                <a href="#contact" class="btn">Jetzt Mitglied werden</a>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <div class="section-subtitle">Was wir anbieten</div>
+                <h2 class="section-title">Unsere Leistungen</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3>Schnitt-Workshops</h3>
+                    <p>Professionelle Workshops für alle Levels - von Anfängern bis Fortgeschrittenen. Lerne innovative Schneide- und Nähtechniken in inspirierender Umgebung.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-pencil"></i>
+                    </div>
+                    <h3>Muster & Designs</h3>
+                    <p>Entwerfe und erstelle deine eigenen Schnittmuster. Unsere Experten unterstützen dich bei der Umsetzung deiner kreativen Ideen in professionelle Designs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Gemeinschaftsprojekte</h3>
+                    <p>Sei Teil spannender Gemeinschaftsprojekte und bringe deine einzigartigen Fähigkeiten ein. Gemeinsam erschaffen wir beeindruckende Werke.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-image">
+                        <div class="about-img-bg"></div>
+                        <div class="about-img-content">
+                            <!-- Platzhalter für ein Bild -->
+                            <div style="width: 100%; height: 100%; background-color: #444; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-scissors" style="font-size: 64px; color: rgba(255,255,255,0.2);"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-subtitle">Wer wir sind</div>
+                        <h2 class="about-title">Die Kunst des Schneidens neu definiert</h2>
+                        <p class="about-text">SchnittKriwa wurde 2020 von einer Gruppe leidenschaftlicher Designer und Handwerker gegründet, mit dem Ziel, die Kunst des Schneidens und Nähens zu fördern und weiterzuentwickeln.</p>
+                        <p class="about-text">Unser Verein bietet einen kreativen Raum, in dem Gleichgesinnte zusammenkommen, um ihre Fähigkeiten zu verbessern, Wissen auszutauschen und gemeinsam an innovativen Projekten zu arbeiten.</p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="feature-text">Modernste Ausrüstung</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="feature-text">Erfahrene Mentoren</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="feature-text">Kreative Community</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="feature-text">Regelmäßige Events</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="section-header">
+                <div class="section-subtitle">Unsere Werke</div>
+                <h2 class="section-title">Projekt Galerie</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background-color: #3a5343; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-shirt" style="font-size: 64px; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Modekollektion 2025</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background-color: #4a6354; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-scissors" style="font-size: 64px; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Workshop-Impressionen</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background-color: #5a7365; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-pencil" style="font-size: 64px; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Design-Entwürfe</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background-color: #6a8376; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-users" style="font-size: 64px; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Team-Events</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background-color: #7a9387; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-trophy" style="font-size: 64px; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Auszeichnungen & Erfolge</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-header">
+                <div class="section-subtitle">Erreiche uns</div>
+                <h2 class="section-title">Kontakt</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-title">Lass uns schneiden</h3>
+                    <p class="contact-text">Interessiert an einer Mitgliedschaft oder hast du Fragen zu unseren Angeboten? Kontaktiere uns - wir freuen uns, von dir zu hören!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-info-text">Schneideweg 42, 10115 Berlin</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-text">info@schnittkriwa.de</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-info-text">+49 30 1234567</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Dein Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Deine E-Mail">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Betreff">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Deine Nachricht"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">SCHNITT<span>KRIWA</span></div>
+                    <p class="footer-text">Ein moderner Verein für alle, die sich für die Kunst des Schneidens und Nähens begeistern. Gemeinsam kreativ werden.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Schnelllinks</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Angebote</a></li>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Angebote</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Workshops</a></li>
+                        <li><a href="#">Schnittmuster</a></li>
+                        <li><a href="#">Mitgliedschaft</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Projekte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Öffnungszeiten</h3>
+                    <ul class="footer-links">
+                        <li>Mo - Fr: 10:00 - 19:00 Uhr</li>
+                        <li>Sa: 10:00 - 16:00 Uhr</li>
+                        <li>So: Geschlossen</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2025 SchnittKriwa e.V. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple JavaScript für die Hamburger-Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('nav ul');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Smooth Scroll für Navigation
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Schließe mobile Navigation
+                        if (navMenu) {
+                            navMenu.style.display = '';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

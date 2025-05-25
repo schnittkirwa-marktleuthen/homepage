@@ -190,7 +190,7 @@ html {
 }
 
 body {
-	background-color: #c9cfca;
+	background-color: #ffffff;
 	background-image: linear-gradient(to top, rgba(154, 201, 59, 0.05), rgba(201, 207, 202, 0.05)), url("../../images/gradient.jpg");
 	background-size: auto,
 		cover;
@@ -219,7 +219,7 @@ body,
 input,
 select,
 textarea {
-	color: #046480;
+		color: #046480;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 16.5pt;
 	font-weight: 300;
@@ -286,7 +286,7 @@ a {
 	-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+	border-bottom: solid 2px #0463805d;
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -327,7 +327,7 @@ a.special:not(.button):before {
 	-ms-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
 	border-radius: 100%;
-	border: solid 2px rgba(255, 255, 255, 0.125);
+	border: solid 2px rgba(0, 0, 0, 0.225);
 	content: '\f105';
 	display: inline-block;
 	font-size: 1.25em;
@@ -404,7 +404,7 @@ h4.major,
 h5.major,
 h6.major {
 	padding-bottom: 1em;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	border-bottom: solid 2px #0463805d;
 }
 
 h2 {
@@ -2951,7 +2951,7 @@ table th {
 }
 
 table thead {
-	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	border-bottom: solid 2px #0463805d;
 }
 
 table tfoot {
@@ -3462,7 +3462,7 @@ button:disabled,
 }
 
 #menu h2 {
-	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	border-bottom: solid 2px #0463805d;
 	padding-bottom: 1em;
 	color: #ffffff;
 }
@@ -3726,7 +3726,7 @@ body.is-preload #banner p {
 }
 
 #wrapper>header h2 {
-	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	border-bottom: solid 2px #0463805d;
 	font-size: 2em;
 	margin-bottom: 0.8em;
 	padding-bottom: 0.4em;
@@ -4359,7 +4359,7 @@ body.is-preload #banner p {
 }
 
 .disabled-link {
-	color: grey !important;
+	color: rgb(73, 73, 73) !important;
 
 	&:hover {
 		color: grey !important;

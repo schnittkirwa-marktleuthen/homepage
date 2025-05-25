@@ -2546,14 +2546,12 @@ input[type="radio"]+label:before {
 /* Image */
 
 .image {
-	border-radius: 5px;
 	border: 0;
 	display: inline-block;
 	position: relative;
 }
 
 .image img {
-	border-radius: 5px;
 	display: block;
 }
 
@@ -3974,7 +3972,6 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight .image {
-	border-radius: 100%;
 	margin: 0 3em 2em 0;
 	width: 22em;
 	overflow: hidden;
@@ -3990,8 +3987,12 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight .image img {
-	border-radius: 100%;
 	width: 100%;
+}
+
+.wrapper.spotlight .image img {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    border-radius: 0;
 }
 
 .wrapper.spotlight .content {

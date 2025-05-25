@@ -1,4 +1,4 @@
-# Homepage: Schnittkirwa Marktleuthen e.V. 
+# Homepage: [Schnittkirwa Marktleuthen e.V.](https://schnittkirwa.de)
 <p align="center">
   <img src="images/logo_large.png" alt="Schnittkirwa Marktleuthen e.V. Logo" width="300"/>
 </p>

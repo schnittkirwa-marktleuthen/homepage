@@ -191,7 +191,7 @@ html {
 
 body {
 	background-color: #c9cfca;
-	background-image: linear-gradient(to top, rgba(154, 201, 59, 0.8), rgba(201, 207, 202, 0.8)), url("../../images/gradient.jpg");
+	background-image: linear-gradient(to top, rgba(154, 201, 59, 0.05), rgba(201, 207, 202, 0.05)), url("../../images/gradient.jpg");
 	background-size: auto,
 		cover;
 	background-attachment: fixed,
@@ -3746,7 +3746,7 @@ body.is-preload #banner p {
 	#wrapper>header {
 		padding: 9em 0 6.25em 0;
 		background-color: #9bcb3c;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/gradient.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.05), rgba(46, 49, 65, 0.05)), url("../../images/gradient.jpg");
 		background-size: auto,
 			cover;
 		background-position: center,
@@ -4270,7 +4270,7 @@ body.is-preload #banner p {
 
 	#footer {
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(154, 201, 59, 0.8), rgba(201, 207, 202, 0.8)), url("../../images/gradient.jpg");
+		background-image: linear-gradient(to top, rgba(154, 201, 59, 0.05), rgba(201, 207, 202, 0.05)), url("../../images/gradient.jpg");
 		background-size: auto,
 			cover;
 		background-position: center,

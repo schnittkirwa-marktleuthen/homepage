@@ -1,3 +1,8 @@
 # Just for dev-purposes
 elements.html
 generic.html
+
+# Firebase for development
+.firebaserc
+firebase.json
+.firebase

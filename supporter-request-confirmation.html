@@ -46,49 +46,21 @@
       <section id="wrapper">
         <header>
           <div class="inner">
-            <h2>Impressum</h2>
+            <h2>Bestätigung</h2>
           </div>
         </header>
 
         <!-- Content -->
         <div class="wrapper">
           <div class="inner">
-            <p>
-              Schnittkirwa Marktleuthen e.V.<br />
-              Martin-Luther-Stra&szlig;e 34<br />
-              95168 Marktleuthen
-            </p>
-
-            <p>
-              Vereinsregister: VR200619<br />
-              Registergericht: Amtsgericht Hof
-            </p>
-
-            <p>
-              Vertreten durch:<br />
-              Sebastian Kn&ouml;fel
-            </p>
-
-            <h2>Kontakt</h2>
-            <p>
-              Telefon: +491629824691<br />
-              E-Mail: info@schnittkirwa.de
-            </p>
-
-            <h2>Redaktionell verantwortlich</h2>
-            <p>
-              Maximilian Sonntag<br />
-              Marktplatz 4<br />
-              95168 Marktleuthen
-            </p>
-
-            <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
-
-            <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+            <div id="confirmation-message-wrapper" class="confirmation-message-wrapper" aria-busy="true">
+              <h3 id="confirmationMessageTitle">Deine Anfrage wird bestätigt</h3>
+              <div id="progress-wrapper" class="progress-wrapper">
+                <progress id="progress-bar" aria-label="Content loading…"></progress>
+              </div>
+              <p id="confirmationMessage">Das kann einige Sekunden dauern, kleinen Moment bitte.</p>
+            </div>
+            <a class="button small" target="_self" href="/">Zurück zur Homepage</a>
           </div>
         </div>
       </section>
@@ -98,7 +70,7 @@
         <div class="inner">
           <ul class="copyright">
             <li><a href="imprint.html">Impressum</a></li>
-            <li><a href="privacy-policy.html">Datenschutz</a></li>
+            <li>Datenschutz</li>
             <li>&copy; 2025 Schnittkirwa Marktleuthen e.V.</li>
             <li>All rights reserved</li>
             <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
@@ -114,5 +86,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/supporter_request_confirmation.js"></script>
   </body>
 </html>

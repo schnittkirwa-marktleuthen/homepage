@@ -293,7 +293,21 @@ a {
 
 a:hover {
 	border-bottom-color: transparent;
+	color: #067b9e !important;
+}
+
+.features a {
+	border-bottom-color: transparent;
 	color: #ffffff !important;
+}
+
+.features a.disabled-link {
+	color: grey !important;
+}
+
+.features a:hover {
+	border-bottom-color: transparent;
+	color: #cbe49a !important;
 }
 
 a.special:not(.button) {
@@ -306,6 +320,7 @@ a.special:not(.button) {
 	letter-spacing: 0.1em;
 	margin: 0 0 2em 0;
 	text-transform: uppercase;
+	color: #046480;
 }
 
 a.special:not(.button):before {
@@ -322,6 +337,44 @@ a.special:not(.button):before {
 }
 
 a.special:not(.button):before {
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 2px #0463806e;
+	content: '\f105';
+	display: inline-block;
+	font-size: 1.25em;
+	height: 2em;
+	line-height: 1.75em;
+	margin-right: 0.85em;
+	text-align: center;
+	text-indent: 0.15em;
+	vertical-align: middle;
+	width: 2em;
+}
+
+.features a.special:not(.button):before {
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 2px #cbe49a9f;
+	content: '\f105';
+	display: inline-block;
+	font-size: 1.25em;
+	height: 2em;
+	line-height: 1.75em;
+	margin-right: 0.85em;
+	text-align: center;
+	text-indent: 0.15em;
+	vertical-align: middle;
+	width: 2em;
+}
+
+a.special.disabled-link:not(.button):before {
 	-moz-transition: background-color 0.2s ease-in-out;
 	-webkit-transition: background-color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out;
@@ -350,7 +403,7 @@ a.special:not(.button):active:before {
 
 strong,
 b {
-	color: #ffffff;
+	color: #046480;
 	font-weight: 600;
 }
 
@@ -2375,6 +2428,7 @@ select::-ms-expand {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="tel"],
 select {
 	height: 2.75em;
 }
@@ -2400,7 +2454,7 @@ input[type="radio"] {
 input[type="checkbox"]+label,
 input[type="radio"]+label {
 	text-decoration: none;
-	color: #ffffff;
+	color: #046480;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1em;
@@ -2431,7 +2485,7 @@ input[type="checkbox"]+label:before,
 input[type="radio"]+label:before {
 	background: rgba(255, 255, 255, 0.025);
 	border-radius: 5px;
-	border: solid 2px rgba(255, 255, 255, 0.125);
+	border: solid 2px #04638059;
 	content: '';
 	display: inline-block;
 	font-size: 0.8em;
@@ -3746,7 +3800,7 @@ body.is-preload #banner p {
 	#wrapper>header {
 		padding: 9em 0 6.25em 0;
 		background-color: #9bcb3c;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/gradient.jpg");
+		background-image: linear-gradient(to top, rgba(154, 201, 59, 0.8), rgba(201, 207, 202, 0.8)), url("../../images/gradient.jpg");
 		background-size: auto,
 			cover;
 		background-position: center,
@@ -3854,6 +3908,14 @@ body.is-preload #banner p {
 	padding: 3em 0 1em 0;
 	margin: 0 auto;
 	width: 55em;
+}
+
+.progress-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	margin-bottom: 2em;
 }
 
 .wrapper.style2 {
@@ -4232,6 +4294,7 @@ body.is-preload #banner p {
 	a {
 		color: #046480;
 	}
+
 	li ::before {
 		box-shadow: inset 0 0 0 2px #04638059;
 	}

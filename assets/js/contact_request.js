@@ -19,15 +19,12 @@ function submitContactRequest(event) {
     message: formDataObj.message,
   };
 
-  fetch(
-    'https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/contact',
-    {
-      method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(contactData),
-    }
-  )
+  fetch('https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/contact', {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(contactData),
+  })
     .then((response) => {
       if (response.status === 200) {
         return response;

@@ -31,15 +31,12 @@ function submitContactRequest(event) {
     },
   };
 
-  fetch(
-    'https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/supporter-request',
-    {
-      method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(supporterData),
-    }
-  )
+  fetch('https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/supporter-request', {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(supporterData),
+  })
     .then((response) => {
       if (response.status === 200) {
         return response;
@@ -58,7 +55,8 @@ function submitContactRequest(event) {
       errorMessageNode = document.createElement('small');
       errorMessageNode.style.color = 'red';
       errorMessageNode.id = 'supporter-request-error-message';
-      errorMessageNode.textContent = 'Ein Fehler ist aufgetreten, bitte versuche es erneut oder schreib uns direkt eine Email an die angegebene Adresse.'
+      errorMessageNode.textContent =
+        'Ein Fehler ist aufgetreten, bitte versuche es erneut oder schreib uns direkt eine Email an die angegebene Adresse.';
 
       progressBarNode.parentNode.parentNode.appendChild(errorMessageNode);
     })

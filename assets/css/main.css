@@ -189,11 +189,7 @@ html {
 
 body {
   background-color: #ffffff;
-  background-image: linear-gradient(
-      to top,
-      rgba(154, 201, 59, 0.05),
-      rgba(201, 207, 202, 0.05)
-    ),
+  background-image: linear-gradient(to top, rgba(154, 201, 59, 0.05), rgba(201, 207, 202, 0.05)),
     url('../../images/gradient.jpg');
   background-size: auto, cover;
   background-attachment: fixed, fixed;
@@ -273,8 +269,7 @@ textarea {
 
 a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out,
-    border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: solid 2px #0463805d;
@@ -2377,6 +2372,15 @@ textarea:focus {
   border-color: #5b6ba6;
 }
 
+input[type='text']:user-invalid,
+input[type='password']:user-invalid,
+input[type='email']:user-invalid,
+input[type='tel']:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: rgba(255, 0, 0, 0.75);
+}
+
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.125)' /%3E%3C/svg%3E");
   background-size: 1.25rem;
@@ -2484,6 +2488,11 @@ input[type='radio']:checked + label:before {
 input[type='checkbox']:focus + label:before,
 input[type='radio']:focus + label:before {
   border-color: #4c5c96;
+}
+
+input[type='checkbox']:user-invalid + label:before,
+input[type='radio']:user-invalid + label:before {
+  border-color: rgba(255, 0, 0, 0.75);
 }
 
 input[type='checkbox'] + label:before {
@@ -3589,12 +3598,9 @@ body.is-menu-visible #menu .inner {
 }
 
 #banner h2 {
-  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease,
-    -moz-filter 0.25s ease;
-  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
-    -webkit-filter 0.25s ease;
-  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease,
-    -ms-filter 0.25s ease;
+  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
   -moz-transform: translateX(0);
   -webkit-transform: translateX(0);
@@ -3616,12 +3622,9 @@ body.is-menu-visible #menu .inner {
 }
 
 #banner p {
-  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease,
-    -moz-filter 0.25s ease;
-  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
-    -webkit-filter 0.25s ease;
-  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease,
-    -ms-filter 0.25s ease;
+  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
   -moz-transform: translateX(0);
   -webkit-transform: translateX(0);
@@ -3750,11 +3753,7 @@ body.is-preload #banner p {
   #wrapper > header {
     padding: 9em 0 6.25em 0;
     background-color: #9bcb3c;
-    background-image: linear-gradient(
-        to top,
-        rgba(154, 201, 59, 0.8),
-        rgba(201, 207, 202, 0.8)
-      ),
+    background-image: linear-gradient(to top, rgba(154, 201, 59, 0.8), rgba(201, 207, 202, 0.8)),
       url('../../images/gradient.jpg');
     background-size: auto, cover;
     background-position: center, 0% 30%;
@@ -4272,11 +4271,7 @@ body.is-preload #banner p {
 @media screen and (max-width: 1280px) {
   #footer {
     background-color: #2e3141;
-    background-image: linear-gradient(
-        to top,
-        rgba(154, 201, 59, 0.05),
-        rgba(201, 207, 202, 0.05)
-      ),
+    background-image: linear-gradient(to top, rgba(154, 201, 59, 0.05), rgba(201, 207, 202, 0.05)),
       url('../../images/gradient.jpg');
     background-size: auto, cover;
     background-position: center, center;

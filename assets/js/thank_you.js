@@ -11,15 +11,13 @@ function fillMessages(event) {
   }
 
   if (from === 'supporter_request') {
-    titleMessage =
-      'Vielen Dank für die Eintragung in unsere Unterstützerliste!';
+    titleMessage = 'Vielen Dank für die Eintragung in unsere Unterstützerliste!';
     message =
-      'Du bekommst in Kürze noch eine Email zur Bestätigung. Sobald die Anfrage bestätigt ist bist du dabei und erhältst ab dann Informationen und Termine zur Schnittkirwa Marktleuthen. Wir freuen uns auf dich!';
+      'Du bekommst in Kürze noch eine Email zur Bestätigung – bitte prüfe auch deinen Spam-Ordner falls du die Mail nicht finden kannst. Sobald die Anfrage bestätigt ist bist du dabei und erhältst ab dann Informationen und Termine zur Schnittkirwa Marktleuthen. Wir freuen uns auf dich!';
   } else if (from === 'contact_form') {
-    titleMessage =
-      'Vielen Dank für deine Nachricht!';
+    titleMessage = 'Vielen Dank für deine Nachricht!';
     message =
-      'Du bekommst in Kürze noch eine Email zur Bestätigung. Wir melden uns zeitnah bei dir.';
+      'Du bekommst in Kürze noch eine Email zur Bestätigung – bitte prüfe auch deinen Spam-Ordner falls du die Mail nicht finden kannst. Wir melden uns zeitnah bei dir.';
   }
 
   var titleNode = document.getElementById('thankYouMessageTitle');

@@ -18,15 +18,12 @@ function fillMessages(event) {
   titleNode.innerText = titleMessage;
   messageNode.innerText = message;
 
-  fetch(
-    'https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/supporter-request-confirmation',
-    {
-      method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code: activationCode }),
-    }
-  )
+  fetch('https://europe-west3-schnittkirwa-ev-api.cloudfunctions.net/api/supporter-request-confirmation', {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: activationCode }),
+  })
     .then((res) => {
       if (res.status === 400) {
         titleMessage = 'Ein Fehler ist aufgetreten';
@@ -61,9 +58,7 @@ function fillMessages(event) {
       var progressWrapperNode = document.getElementById('progress-wrapper');
       progressWrapperNode.style.display = 'none';
 
-      var confirmationMessageWrapperNode = document.getElementById(
-        'confirmation-message-wrapper'
-      );
+      var confirmationMessageWrapperNode = document.getElementById('confirmation-message-wrapper');
       confirmationMessageWrapperNode.ariaBusy = false;
     });
 }

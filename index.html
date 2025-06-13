@@ -1,312 +1,176 @@
-<!DOCTYPE html>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Schnittkirwa Marktleuthen e.V. – Traditionsfest in Marktleuthen</title>
-    <meta
-      name="description"
-      content="Offizielle Website des Schnittkirwa Marktleuthen e.V. – Alles rund um das Traditionsfest, Mitgliedschaft, Bilder, Dokumente und Kontaktmöglichkeiten." />
-    <meta
-      name="keywords"
-      content="Schnittkirwa, Marktleuthen, Verein, Traditionsfest, Mitgliedschaft, Bilder, Dokumente, Kontakt" />
-    <meta name="author" content="Schnittkirwa Marktleuthen e.V." />
-    <link rel="canonical" href="https://www.schnittkirwa.de/" />
-    <link rel="icon" href="images/logo_small.png" type="image/png" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.schnittkirwa.de/" />
-    <meta property="og:title" content="Schnittkirwa Marktleuthen e.V. – Traditionsfest in Marktleuthen" />
-    <meta property="og:image" content="images/logo_small.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta
-      property="og:description"
-      content="Offizielle Website des Schnittkirwa Marktleuthen e.V. – Alles rund um das Traditionsfest, Mitgliedschaft, Bilder, Dokumente und Kontaktmöglichkeiten." />
-    <meta property="og:image" content="https://www.schnittkirwa.de/images/logo_large.png" />
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Schnittkirwa Marktleuthen e.V. – Traditionsfest in Marktleuthen" />
-    <meta
-      name="twitter:description"
-      content="Offizielle Website des Schnittkirwa Marktleuthen e.V. – Alles rund um das Traditionsfest, Mitgliedschaft, Bilder, Dokumente und Kontaktmöglichkeiten." />
-    <meta name="twitter:image" content="https://www.schnittkirwa.de/images/logo_large.png" />
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Schnittkirwa Marktleuthen e.V.",
-        "url": "https://www.schnittkirwa.de/",
-        "logo": "https://www.schnittkirwa.de/images/logo_large.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "email": "info@schnittkirwa.de",
-            "contactType": "customer service"
-          }
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Martin-Luther-Straße 34",
-          "addressLocality": "Marktleuthen",
-          "postalCode": "95168",
-          "addressCountry": "DE"
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+---
+layout: default
+include_footer: false
+additional_scripts: |
+  <script src="assets/js/contact_request.js"></script>
+---
 
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
-        <h1><img src="images/logo_small.png" alt="" /><a href="/">Schnittkirwa Marktleuthen e.V.</a></h1>
-        <nav>
-          <a href="#menu">Menü</a>
-        </nav>
-      </header>
-
-      <!-- Menu -->
-      <nav id="menu">
-        <div class="inner">
-          <h2>Menü</h2>
-          <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="#one">Warum ist die Schnittkirwa ein Verein?</a></li>
-            <li><a href="#two">Wer sind wir?</a></li>
-            <li><a href="#three">Der Ablauf</a></li>
-            <li><a href="#four">Unterstützer werden</a></li>
-            <li><a href="#five">Bilder & Dokumente</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <div class="logo">
+            <img alt="" src="images/logo_small.png" />
         </div>
-      </nav>
+        <h2>Willkommen beim {{ site.club_name }}
+        </h2>
+        <p>
+            Die offizielle Website des Vereins auf der wir alle Informationen rund um die Schnittkirwa
+            Marktleuthen bereitstellen
+        </p>
+    </div>
+</section>
 
-      <!-- Banner -->
-      <section id="banner">
+<!-- Wrapper -->
+<section id="wrapper">
+    <!-- One -->
+    {% comment %} BEGIN SECTION 1 {% endcomment %}
+    {% capture headline_1 %}
+      Warum ist die Schnittkirwa ein Verein?
+    {% endcapture %}
+    {% capture message_1 %} 
+      Die Schnittkirwa Marktleuthen wurde über Jahre hinweg von den Ortsverbänden der CSU & JU organisiert und durchgeführt.
+      Aufgrund abnehmender Mitgliederzahlen und der hohen Einstiegshürde in eine politische Organisation wurde die
+      Durchführung zunehmend komplizierter. Ein eigener Verein, einzig dem Traditionsfest gewidmet soll hier anknüpfen und
+      entsprechend gegenwirken. 
+    {% endcapture %}
+
+    {% include home_section.html id='one' section_classes='wrapper spotlight style1' image_path='images/logo_large.png'
+ headline=headline_1
+ message=message_1
+ link_classes='disabled-link'
+ link_text='Mehr erfahren (kommt bald)' %}
+    {% comment %} END SECTION 1 {% endcomment %}
+
+    <!-- Two -->
+    {% comment %} BEGIN SECTION 2 {% endcomment %}
+    {% capture headline_2 %}
+      Wer sind wir?
+    {% endcapture %}
+    {% capture message_2 %} 
+        Gegründet wurde der Verein aus dem langjährigen Organisationsteam, wodurch wir schon zur Gründung 
+        mit viel Know-How und einem funktionierenden Planungsnetzwerk ausgestattet wurden. Die aktuelle 
+        Vorstandschaft und eine kurze Vorstellung dieser findest du auf der nächsten Seite.
+    {% endcapture %}
+
+    {% include home_section.html
+ id='two' section_classes='wrapper alt spotlight style2'
+ image_path='images/vorstand.jpg'
+ headline=headline_2
+ message=message_2
+ link_classes='disabled-link'
+ link_text='Die Vorstandschaft (kommt bald)' %}
+    {% comment %} END SECTION 2 {% endcomment %}
+
+
+    <!-- Three -->
+    {% comment %} BEGIN SECTION 3 {% endcomment %}
+    {% capture headline_3 %}
+      Der Ablauf
+    {% endcapture %}
+    {% capture message_3 %}
+      Die Schnittkirwa Marktleuthen gilt inzwischen als größtes Fest im Veranstaltungskalender des Ortes. 
+      Mit drei Tagen Festbetrieb und einem Programm das Jugend, Familien & Traditionalisten anspricht kann 
+      sich das Fest aber auch über die Ortsgrenzen hinaus sehen lassen. Von Partystimmung bis Blasmusik, 
+      von Weißwurstfrühstück bis Lederpflegeset – auf der Schnittkirwa Marktleuthen ist für Jeden etwas
+      dabei.
+    {% endcapture %}
+
+    {% include home_section.html
+ id='three' section_classes='wrapper spotlight style3'
+ image_path='images/kirwa_generic.jpg'
+ headline=headline_3
+ message=message_3
+ link_classes='disabled-link'
+ link_text='Zum Programm (kommt bald)' %}
+    {% comment %} END SECTION 3 {% endcomment %}
+
+    <!-- Four -->
+    {% comment %} BEGIN SECTION 4 {% endcomment %}
+    {% capture headline_4 %}
+      Unterstützer werden
+    {% endcapture %}
+    {% capture message_4 %}
+      Du möchtest unserem Verein bei der Durchführung der Schnittkirwa helfen aber nicht direkt eintreten? 
+      Kein Problem, trage dich in unsere Unterstützerliste ein um über aktuelle Planungsstände und Termine 
+      informiert zu werden. Völlig unverbindlich und ohne Pflichten – versprochen!
+    {% endcapture %}
+
+    {% include home_section.html
+ id='four' section_classes='wrapper alt spotlight style2'
+ image_path='images/team.jpg'
+ headline=headline_4 
+ message=message_4
+ link_text='Unterstützer werden'
+ href='supporters.html' %}
+    {% comment %} END SECTION 4 {% endcomment %}
+
+    <!-- Five -->
+    <section class="wrapper style1" id="five">
         <div class="inner">
-          <div class="logo"><img src="images/logo_small.png" alt="" /></div>
-          <h2>Willkommen beim Schnittkirwa Marktleuthen e.V.</h2>
-          <p>
-            Die offizielle Website des Vereins auf der wir alle Informationen rund um die Schnittkirwa Marktleuthen
-            bereitstellen
-          </p>
-        </div>
-      </section>
-
-      <!-- Wrapper -->
-      <section id="wrapper">
-        <!-- One -->
-        <section id="one" class="wrapper spotlight style1">
-          <div class="inner">
-            <a href="#" class="image"><img src="images/logo_large.png" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Warum ist die Schnittkirwa ein Verein?</h2>
-              <p>
-                Die Schnittkirwa Marktleuthen wurde über Jahre hinweg von den Ortsverbänden der CSU & JU organisiert und
-                durchgeführt. Aufgrund abnehmender Mitgliederzahlen und der hohen Einstiegshürde in eine politische
-                Organisation wurde die Durchführung zunehmend komplizierter. Ein eigener Verein, einzig dem
-                Traditionsfest gewidmet soll hier anknüpfen und entsprechend gegenwirken.
-              </p>
-              <a class="special disabled-link">Mehr erfahren (kommt bald)</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Two -->
-        <section id="two" class="wrapper alt spotlight style2">
-          <div class="inner">
-            <a href="#" class="image"><img src="images/vorstand.jpg" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Wer sind wir?</h2>
-              <p>
-                Gegründet wurde der Verein aus dem langjährigen Organisationsteam, wodurch wir schon zur Gründung mit
-                viel Know-How und einem funktionierenden Planungsnetzwerk ausgestattet wurden. Die aktuelle
-                Vorstandschaft und eine kurze Vorstellung dieser findest du auf der nächsten Seite.
-              </p>
-              <a class="special disabled-link">Die Vorstandschaft (kommt bald)</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Three -->
-        <section id="three" class="wrapper spotlight style3">
-          <div class="inner">
-            <a href="#" class="image"><img src="images/kirwa_generic.jpg" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Der Ablauf</h2>
-              <p>
-                Die Schnittkirwa Marktleuthen gilt inzwischen als größtes Fest im Veranstaltungskalender des Ortes. Mit
-                drei Tagen Festbetrieb und einem Programm das Jugend, Familien & Traditionalisten anspricht kann sich
-                das Fest aber auch über die Ortsgrenzen hinaus sehen lassen. Von Partystimmung bis Blasmusik, von
-                Weißwurstfrühstück bis Lederpflegeset – auf der Schnittkirwa Marktleuthen ist für Jeden etwas dabei.
-              </p>
-              <a class="special disabled-link">Zum Programm (kommt bald)</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Four -->
-        <section id="four" class="wrapper alt spotlight style2">
-          <div class="inner">
-            <a href="#" class="image"><img src="images/team.jpg" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Unterstützer werden</h2>
-              <p>
-                Du möchtest unserem Verein bei der Durchführung der Schnittkirwa helfen aber nicht direkt eintreten?
-                Kein Problem, trage dich in unsere Unterstützerliste ein um über aktuelle Planungsstände und Termine
-                informiert zu werden. Völlig unverbindlich und ohne Pflichten – versprochen!
-              </p>
-              <a class="special" href="supporters.html">Unterstützer werden</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Five -->
-        <section id="five" class="wrapper style1">
-          <div class="inner">
-            <h2 class="major">Bilder & Dokumente</h2>
+            <h2 class="major">
+                Bilder & Dokumente
+            </h2>
             <p>
-              Bilder sagen mehr als tausend Worte – und Taten genauso! Wenn auch
-              <strong>DU</strong> ein Teil unserer Schnittkirwa werden willst, fülle einfach den Mitgliedsantrag aus und
-              du bist dabei!
+                Bilder sagen mehr als tausend Worte – und Taten genauso! Wenn auch
+                <strong>DU
+                </strong>
+                ein Teil unserer Schnittkirwa werden willst, fülle einfach den Mitgliedsantrag aus und du bist
+                dabei!
             </p>
             <section class="features">
-              <article>
-                <a href="#" class="image"><img src="images/behind_the_zapfhahn.jpeg" alt="" /></a>
-                <h3 class="major">Behind the Zapfhahn</h3>
-                <p>
-                  Ein paar Eindrücke unserer vergangenen Feste, mit exklusiven Einblicken hinter die Kulissen! Denn
-                  Schnittkirwa macht nicht nur als Gast, sondern auch als aktiver Helfer Spaß – einfach mal reinschauen
-                  und inspirieren lassen ;)
-                </p>
-                <a class="special disabled-link">Bilder ansehen (kommt bald)</a>
-              </article>
-              <article>
-                <a
-                  target="_blank"
-                  href="https://www.schnittkirwa.de/assets/documents/mitgliedsantrag_schnittkirwa_marktleuthen_ev.pdf"
-                  class="image"
-                  ><img id="pdf" src="images/mitgliedsantrag.png" alt=""
-                /></a>
-                <h3 class="major">Mitglied werden</h3>
-                <p>
-                  Egal ob Organisationstalent, Anpacker beim Auf- & Abbau, Biertaxi mit Trinkgeldaffinität, Held des
-                  Zapfhahns oder Bratwurst-Sommelier – jeder ist im Schnittkirwa Marktleuthen e.V. willkommen! Einfach
-                  Antrag herunterladen, ausfüllen und uns zukommen lassen, schon bist du ein Teil des legendären
-                  Kirwa-Teams!
-                </p>
-                <a
-                  target="_blank"
-                  href="https://www.schnittkirwa.de/assets/documents/mitgliedsantrag_schnittkirwa_marktleuthen_ev.pdf"
-                  class="special"
-                  >Mitgliedsantrag herunterladen</a
-                >
-              </article>
+                <article>
+                    <a class="image" href="#">
+                        <img alt="" src="images/behind_the_zapfhahn.jpeg" />
+                    </a>
+                    <h3 class="major">
+                        Behind the Zapfhahn
+                    </h3>
+                    <p>
+                        Ein paar Eindrücke unserer vergangenen Feste, mit exklusiven Einblicken hinter die Kulissen! Denn
+                        Schnittkirwa macht nicht nur als Gast, sondern auch als aktiver Helfer Spaß – einfach mal
+                        reinschauen und inspirieren lassen ;)
+                    </p>
+                    <a class="special disabled-link">
+                        Bilder ansehen (kommt bald)
+                    </a>
+                </article>
+                <article>
+                    <a
+                        class="image"
+                        href="{{ site.url }}assets/documents/mitgliedsantrag_schnittkirwa_marktleuthen_ev.pdf"
+                        target="_blank">
+                        <img
+                            alt=""
+                            id="pdf"
+                            src="images/mitgliedsantrag.png" />
+                    </a>
+                    <h3 class="major">
+                        Mitglied werden
+                    </h3>
+                    <p>
+                        Egal ob Organisationstalent, Anpacker beim Auf- & Abbau, Biertaxi mit Trinkgeld-Affinität, Held des
+                        Zapfhahns oder Bratwurst-Sommelier – jeder ist im {{ site.club_name }} willkommen! Einfach Antrag herunterladen, ausfüllen und uns zukommen lassen, schon bist du ein Teil
+                        des legendären Kirwa-Teams!
+                    </p>
+                    <a
+                        class="special"
+                        href="{{ site.url }}assets/documents/mitgliedsantrag_schnittkirwa_marktleuthen_ev.pdf"
+                        target="_blank">
+                        Mitgliedsantrag herunterladen
+                    </a>
+                </article>
             </section>
-            <!-- <ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul> -->
-          </div>
-        </section>
-      </section>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="inner">
-          <h2 class="major">Wie du uns erreichst</h2>
-          <p>
-            Gerne kannst du uns direkt hier eine Nachricht schreiben, wir sind aber auch in den sozielen Medien, per
-            Email oder auch telefonisch erreichbar. Falls du uns Bilder oder Dokumente (vielleicht sogar deinen
-            Mitgliedsantrag) zukommen lassen möchtest, schreib uns bitte eine Email an die angegebene Adresse und nutze
-            nicht das Kontaktformular.
-          </p>
-          <p>Wir freuen uns auf deine Nachricht!</p>
-          <form id="form">
-            <div class="fields">
-              <div class="field">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required />
-              </div>
-              <div class="field">
-                <label for="message">Deine Nachricht an uns</label>
-                <textarea name="message" id="message" rows="4" required></textarea>
-              </div>
-              <div class="field">
-                <input
-                  type="checkbox"
-                  id="accept-privacy-policy"
-                  name="accept-privacy-policy"
-                  value="accept-privacy-policy"
-                  required />
-                <label for="accept-privacy-policy"
-                  >Ich habe die <a style="color: #046480" href="privacy-policy.html">Datenschutzbestimmungen</a> gelesen
-                  und akzeptiere sie zur Übermittlung meiner Daten.*</label
-                ><br />
-              </div>
-            </div>
-            <ul class="actions" style="gap: 1.25em">
-              <li>
-                <input id="contact-submit-btn" type="submit" value="Nachricht senden" />
-              </li>
-              <progress
-                style="visibility: hidden; align-self: center"
-                id="progress-bar"
-                aria-label="Content loading…"></progress>
-            </ul>
-          </form>
-          <ul class="contact">
-            <li class="icon solid fa-home">
-              Schnittkirwa Marktleuthen e.V.<br />
-              Martin-Luther-Straße 34<br />
-              95168 Marktleuthen
-            </li>
-            <li class="icon solid fa-phone">
-              <a href="tel:+491609824691">+49 160 9824691</a>
-            </li>
-            <li class="icon solid fa-envelope">
-              <a href="mailto:info@schnittkirwa.de">info@schnittkirwa.de</a>
-            </li>
-            <li class="icon brands fa-facebook-f">
-              <a target="_blank" href="https://www.facebook.com/schnittkirwa">facebook.com/schnittkirwa</a>
-            </li>
-            <li class="icon brands fa-instagram">
-              <a target="_blank" href="https://www.instagram.com/schnittkirwamarktleuthen/"
-                >instagram.com/schnittkirwamarktleuthen/</a
-              >
-            </li>
-          </ul>
-          <ul class="copyright">
-            <li><a href="imprint.html">Impressum</a></li>
-            <li><a href="privacy-policy.html">Datenschutz</a></li>
-            <li>&copy; 2025 Schnittkirwa Marktleuthen e.V.</li>
-            <li>All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-          </ul>
         </div>
-      </section>
-    </div>
+    </section>
+</section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/contact_request.js"></script>
-  </body>
-</html>
+<!-- Footer -->
+<section id="footer">
+    <div class="inner">
+        {% capture contact_form %}
+          {% include contact_form.html %}
+        {% endcapture %}
+
+        {% include footer.html footerContent=contact_form %}
+    </div>
+</section>

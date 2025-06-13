@@ -1,0 +1,92 @@
+<h2 class="major">Wie du uns erreichst
+</h2>
+<p>
+    Gerne kannst du uns direkt hier eine Nachricht schreiben, wir sind aber auch in den sozielen Medien,
+    per Email oder auch telefonisch erreichbar. Falls du uns Bilder oder Dokumente (vielleicht sogar
+    deinen Mitgliedsantrag) zukommen lassen möchtest, schreib uns bitte eine Email an die angegebene
+    Adresse und nutze nicht das Kontaktformular.
+</p>
+<p>Wir freuen uns auf deine Nachricht!
+</p>
+<form id="form">
+    <div class="fields">
+        <div class="field">
+            <label for="name">Name
+            </label>
+            <input
+                id="name"
+                name="name"
+                required
+                type="text" />
+        </div>
+        <div class="field">
+            <label for="email">Email
+            </label>
+            <input
+                id="email"
+                name="email"
+                required
+                type="email" />
+        </div>
+        <div class="field">
+            <label for="message">Deine Nachricht an uns
+            </label>
+            <textarea
+                id="message"
+                name="message"
+                required
+                rows="4"></textarea>
+        </div>
+        <div class="field">
+            <input
+                id="accept-privacy-policy"
+                name="accept-privacy-policy"
+                required
+                type="checkbox"
+                value="accept-privacy-policy" />
+            <label for="accept-privacy-policy">Ich habe die
+                <a href="privacy-policy" style="color: #046480">Datenschutzbestimmungen
+                </a>
+                gelesen und akzeptiere sie zur Übermittlung meiner Daten.*
+            </label>
+            <br/>
+        </div>
+    </div>
+    <ul class="actions" style="gap: 1.25em">
+        <li>
+            <input
+                id="contact-submit-btn"
+                type="submit"
+                value="Nachricht senden" />
+        </li>
+        <progress
+            aria-label="Content loading…"
+            id="progress-bar"
+            style="visibility: hidden; align-self: center"></progress>
+    </ul>
+</form>
+<ul class="contact">
+    <li class="icon solid fa-home">
+        {{ site.club_name }}
+        <br/>
+        Martin-Luther-Straße 34
+        <br/>
+        95168 Marktleuthen
+    </li>
+    <li class="icon solid fa-phone">
+        <a href="tel:+491609824691">+49 160 9824691
+        </a>
+    </li>
+    <li class="icon solid fa-envelope">
+        <a href="mailto:{{ site.email }}">info@schnittkirwa.de
+        </a>
+    </li>
+    <li class="icon brands fa-facebook-f">
+        <a href="https://www.facebook.com/schnittkirwa" target="_blank">facebook.com/schnittkirwa
+        </a>
+    </li>
+    <li class="icon brands fa-instagram">
+        <a href="https://www.instagram.com/schnittkirwamarktleuthen/" target="_blank">instagram.com/schnittkirwamarktleuthen/
+        </a>
+    </li>
+</ul>

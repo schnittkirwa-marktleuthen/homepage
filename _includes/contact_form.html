@@ -52,7 +52,7 @@
             <br/>
         </div>
     </div>
-    <ul class="actions" style="gap: 1.25em">
+    <ul class="actions">
         <li>
             <input
                 id="contact-submit-btn"
@@ -60,25 +60,27 @@
                 value="Nachricht senden" />
         </li>
         <progress
-            aria-label="Content loading…"
+            aria-label="Content loading"
             id="progress-bar"
             style="visibility: hidden; align-self: center"></progress>
     </ul>
 </form>
 <ul class="contact">
     <li class="icon solid fa-home">
-        {{ site.club_name }}
+        {{ site.name }}
         <br/>
-        Martin-Luther-Straße 34
+        {{ site.street }}
         <br/>
-        95168 Marktleuthen
+        {{ site.zip }} {{ site.city }}
     </li>
     <li class="icon solid fa-phone">
-        <a href="tel:+491609824691">+49 160 9824691
+        <a href="tel:{{ site.tel  }}">
+            {{ site.tel_pretty }}
         </a>
     </li>
     <li class="icon solid fa-envelope">
-        <a href="mailto:{{ site.email }}">info@schnittkirwa.de
+        <a href="mailto:{{ site.email }}">
+            {{ site.email }}
         </a>
     </li>
     <li class="icon brands fa-facebook-f">

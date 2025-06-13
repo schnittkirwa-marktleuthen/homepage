@@ -2697,6 +2697,7 @@ ul.actions {
   list-style: none;
   margin-left: -1em;
   padding-left: 0;
+  gap: 1.25em;
 }
 
 ul.actions li {

@@ -12,11 +12,11 @@ include_footer: true
     <div class="wrapper">
         <div class="inner">
             <p>
-                {{ site.club_name }}
+                {{ site.name }}
                 <br/>
-                Martin-Luther-Stra&szlig;e 34
+                {{ site.street }}
                 <br/>
-                95168 Marktleuthen
+                {{ site.zip }} {{ site.city }}
             </p>
 
             <p>
@@ -28,15 +28,15 @@ include_footer: true
             <p>
                 Vertreten durch:
                 <br/>
-                Sebastian Kn&ouml;fel
+                Sebastian Knöfel
             </p>
 
             <h2>Kontakt
             </h2>
             <p>
-                Telefon: +491629824691
+                Telefon: {{ site.tel }}
                 <br/>
-                E-Mail: info@schnittkirwa.de
+                E-Mail: {{ site.email }}
             </p>
 
             <h2>Redaktionell verantwortlich
@@ -46,7 +46,7 @@ include_footer: true
                 <br/>
                 Marktplatz 4
                 <br/>
-                95168 Marktleuthen
+                {{ site.zip }} {{ site.city }}
             </p>
 
             <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle

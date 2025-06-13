@@ -20,9 +20,14 @@
 
 title: Schnittkirwa Marktleuthen e.V. – Traditionsfest in Marktleuthen
 description: Offizielle Website des Schnittkirwa Marktleuthen e.V. – Alles rund um das Traditionsfest, Mitgliedschaft, Bilder, Dokumente und Kontaktmöglichkeiten.
-url: "https://schnittkirwa.de/"
-email: info@schnittkirwa.de
-club_name: Schnittkirwa Marktleuthen e.V.
+url: 'https://schnittkirwa.de/'
+email: 'info@schnittkirwa.de'
+tel: '+491609824691'
+tel_pretty: '+49 160 9824691'
+name: 'Schnittkirwa Marktleuthen e.V.'
+street: 'Martin-Luther-Straße 34'
+zip: '95168'
+city: Marktleuthen
 facebook: https://www.facebook.com/schnittkirwa
 instagram: https://www.instagram.com/schnittkirwamarktleuthen/
 
@@ -38,9 +43,8 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-  - gemfiles/
+  #   - .sass-cache/
+  #   - .jekyll-cache/
   - Gemfile
   - Gemfile.lock
   - node_modules/

@@ -10,7 +10,7 @@
     </title>
     <meta content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" name="description">
     <meta content="Schnittkirwa, Marktleuthen, Verein, Traditionsfest, Mitgliedschaft, Bilder, Dokumente, Kontakt" name="keywords">
-    <meta content="{{ site.club_name  }}" name="author">
+    <meta content="{{ site.name  }}" name="author">
     <link href="{{ site.url }}" rel="canonical">
     <link
         href="images/logo_small.png"
@@ -36,7 +36,7 @@
         {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "{{ site.club_name }}",
+            "name": "{{ site.name }}",
             "url": "{{ site.url }}",
             "logo": "{{ site.url }} images/logo_large.png",
             "contactPoint": [
@@ -48,9 +48,9 @@
             ],
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Martin-Luther-Straße 34",
-                "addressLocality": "Marktleuthen",
-                "postalCode": "95168",
+                "streetAddress": "{{ site.street }}",
+                "addressLocality": "{{ site.city }}",
+                "postalCode": "{{ site.zip }}",
                 "addressCountry": "DE"
             }
         }

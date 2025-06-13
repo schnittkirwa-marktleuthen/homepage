@@ -38,29 +38,29 @@ additional_scripts: |
                     <label for="name">Name*
                     </label>
                     <input
-                        type="text"
-                        name="name"
                         id="name"
-                        required />
+                        name="name"
+                        required
+                        type="text" />
                 </div>
                 <div class="field">
                     <label for="email">Email*
                     </label>
                     <input
-                        type="email"
-                        name="email"
                         id="email"
-                        required />
+                        name="email"
+                        required
+                        type="email" />
                 </div>
                 <div class="field">
                     <label for="email">Telefon/Mobil*
                     </label>
                     <input
-                        type="tel"
-                        pattern="^((\+49)|(0){1})[1-9][0-9]{1,14}$"
-                        name="tel"
                         id="tel"
-                        required />
+                        name="tel"
+                        pattern="^((\+49)|(0){1})[1-9][0-9]{1,14}$"
+                        required
+                        type="tel" />
                 </div>
                 <div class="field">
                     <label>In diesen Bereichen könnte ich unterstützen
@@ -70,65 +70,65 @@ additional_scripts: |
                         wählst bist du nicht gezwungen genau dort zu helfen – es hilft uns nur bei der Planung.
                     </p>
                     <input
-                        type="checkbox"
                         id="aufbau"
                         name="aufbau"
+                        type="checkbox"
                         value="Aufbau" />
                     <label for="aufbau">Aufbau
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="abbau"
                         name="abbau"
+                        type="checkbox"
                         value="Abbau" />
                     <label for="abbau">Abbau
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="bratwurststand"
                         name="bratwurststand"
+                        type="checkbox"
                         value="Bratwurststand" />
                     <label for="bratwurststand">Bratwurststand
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="fisch_kaese"
                         name="fisch_kaese"
+                        type="checkbox"
                         value="Fisch- & Käsestand" />
                     <label for="fisch_kaese">Fisch- & Käsestand
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="schenke"
                         name="schenke"
+                        type="checkbox"
                         value="Schenke" />
                     <label for="schenke">Schenke
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="bar"
                         name="bar"
+                        type="checkbox"
                         value="Bar" />
                     <label for="bar">Bar
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="kaffee_kuchen"
                         name="kaffee_kuchen"
+                        type="checkbox"
                         value="Kaffee- & Kuchenausgabe" />
                     <label for="kaffee_kuchen">Kaffee- & Kuchenausgabe
                     </label>
                     <br/>
                     <input
-                        type="checkbox"
                         id="kleinarbeiten"
                         name="kleinarbeiten"
+                        type="checkbox"
                         value="Kleinarbeiten" />
                     <label for="kleinarbeiten">Kleinarbeiten (Aufräumen, Müll sammeln, Einkäufe,...)
                     </label>
@@ -138,27 +138,27 @@ additional_scripts: |
                     <label for="message">Gibt es noch etwas das wir wissen sollen?
                     </label>
                     <textarea
-                        name="message"
                         id="message"
+                        name="message"
                         rows="4"></textarea>
                 </div>
                 <div class="field">
                     <input
-                        type="checkbox"
                         id="accept-privacy-policy"
                         name="accept-privacy-policy"
-                        value="accept-privacy-policy"
-                        required />
+                        required
+                        type="checkbox"
+                        value="accept-privacy-policy" />
                     <label for="accept-privacy-policy">Ich habe die
-                        <a style="color: #046480" href="privacy-policy.html">Datenschutzbestimmungen
+                        <a href="privacy-policy.html" style="color: #046480">Datenschutzbestimmungen
                         </a>
                         gelesen und akzeptiere sie zur Übermittlung meiner
-                        Daten.*
+                                                Daten.*
                     </label>
                     <br/>
                 </div>
             </div>
-            <ul class="actions" style="gap: 1.25em">
+            <ul class="actions">
                 <li>
                     <input
                         id="request-submit-btn"
@@ -166,9 +166,9 @@ additional_scripts: |
                         value="Nachricht senden" />
                 </li>
                 <progress
-                    style="visibility: hidden; align-self: center"
+                    aria-label="Content loading"
                     id="progress-bar"
-                    aria-label="Content loading…"></progress>
+                    style="visibility: hidden; align-self: center"></progress>
             </ul>
 
             <p>Mit * markierte Felder müssen ausgefüllt werden

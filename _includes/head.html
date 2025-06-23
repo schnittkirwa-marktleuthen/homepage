@@ -1,0 +1,61 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+    <meta content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" name="description">
+    <meta content="Schnittkirwa, Marktleuthen, Verein, Traditionsfest, Mitgliedschaft, Bilder, Dokumente, Kontakt" name="keywords">
+    <meta content="{{ site.name  }}" name="author">
+    <link href="{{ site.url }}" rel="canonical">
+    <link
+        href="images/logo_small.png"
+        rel="icon"
+        type="image/png">
+        <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type">
+    <meta content="{{ site.url }}" property="og:url">
+    <meta content="{% if page.og_title %}{{ page.og_title }}{% else %}{{ site.title }}{% endif %}" property="og:title">
+    <meta content="images/logo_small.png" property="og:image">
+    <meta content="512" property="og:image:width">
+    <meta content="512" property="og:image:height">
+    <meta content="{{ site.descrition }}" property="og:description">
+    <meta content="{% if page.og_description %}{{ page.og_description }}{% else %}{{ site.description }}{% endif %}" property="og:description">
+    <meta content="{{ site.url }}images/logo_large.png" property="og:image">
+        <!-- Twitter -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="{% if page.og_title %}{{ page.og_title }}{% else %}{{ site.title }}{% endif %}" name="twitter:title">
+    <meta content="{% if page.og_description %}{{ page.og_description }}{% else %}Offizielle Website des Schnittkirwa Marktleuthen e.V. – Alles rund um das Traditionsfest, Mitgliedschaft, Bilder, Dokumente und Kontaktmöglichkeiten.{% endif %}" name="twitter:description">
+    <meta content="{{ site.url }}images/logo_large.png" name="twitter:image">
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "{{ site.name }}",
+            "url": "{{ site.url }}",
+            "logo": "{{ site.url }} images/logo_large.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "email": "{{ site.email }}",
+                    "contactType": "customer service"
+                }
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ site.street }}",
+                "addressLocality": "{{ site.city }}",
+                "postalCode": "{{ site.zip }}",
+                "addressCountry": "DE"
+            }
+        }
+    </script>
+    <link href="assets/css/main.css" rel="stylesheet">
+    <noscript><link href="assets/css/noscript.css" rel="stylesheet">
+    </noscript>
+</head>

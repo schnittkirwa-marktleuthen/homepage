@@ -1,0 +1,16 @@
+{% if include.title or include.subtitle %}
+    <section id="banner">
+        <div class="inner">
+            {% if include.title %}
+                <h2>
+                    {{ include.title }}
+                </h2>
+            {% endif %}
+            {% if include.subtitle %}
+                <p>
+                    {{ include.subtitle }}
+                </p>
+            {% endif %}
+        </div>
+    </section>
+{% endif %}

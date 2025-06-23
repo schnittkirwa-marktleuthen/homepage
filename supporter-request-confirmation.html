@@ -1,91 +1,35 @@
-<!DOCTYPE html>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
-    <title>Schnittkirwa Marktleuthen e.V.</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-  </head>
+---
+layout: default
+include_footer: true
+additional_scripts: |
+  <script src="assets/js/supporter_request_confirmation.js"></script>
+---
 
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
-        <h1><img src="images/logo_small.png" alt="" /><a href="/">Schnittkirwa Marktleuthen e.V.</a></h1>
-        <nav>
-          <a href="#menu">Menü</a>
-        </nav>
-      </header>
+<!-- Banner -->
+{% include banner.html title='Bestätigung' %}
 
-      <!-- Menu -->
-      <nav id="menu">
+<!-- Wrapper -->
+<section id="wrapper">
+    <!-- Content -->
+    <div class="wrapper">
         <div class="inner">
-          <h2>Menü</h2>
-          <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#one">Warum ist die Schnittkirwa ein Verein?</a></li>
-            <li><a href="/#two">Wer sind wir?</a></li>
-            <li><a href="/#three">Der Ablauf</a></li>
-            <li><a href="/#four">Unterstützer werden</a></li>
-            <li><a href="/#five">Bilder & Dokumente</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
-        </div>
-      </nav>
-
-      <!-- Wrapper -->
-      <section id="wrapper">
-        <header>
-          <div class="inner">
-            <h2>Bestätigung</h2>
-          </div>
-        </header>
-
-        <!-- Content -->
-        <div class="wrapper">
-          <div class="inner">
-            <div id="confirmation-message-wrapper" class="confirmation-message-wrapper" aria-busy="true">
-              <h3 id="confirmationMessageTitle">Deine Anfrage wird bestätigt</h3>
-              <div id="progress-wrapper" class="progress-wrapper">
-                <progress id="progress-bar" aria-label="Content loading…"></progress>
-              </div>
-              <p id="confirmationMessage">Das kann einige Sekunden dauern, kleinen Moment bitte.</p>
+            <div
+                aria-busy="true"
+                class="confirmation-message-wrapper"
+                id="confirmation-message-wrapper">
+                <h3 id="confirmationMessageTitle">Deine Anfrage wird bestätigt
+                </h3>
+                <div class="progress-wrapper" id="progress-wrapper">
+                    <progress aria-label="Content loading" id="progress-bar"></progress>
+                </div>
+                <p id="confirmationMessage">Das kann einige Sekunden dauern, kleinen Moment bitte.
+                </p>
             </div>
-            <a class="button small" target="_self" href="/">Zurück zur Homepage</a>
-          </div>
+            <a
+                class="button small"
+                href="/"
+                target="_self">Zurück zur Homepage
+            </a>
         </div>
-      </section>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="inner">
-          <ul class="copyright">
-            <li><a href="imprint.html">Impressum</a></li>
-            <li>Datenschutz</li>
-            <li>&copy; 2025 Schnittkirwa Marktleuthen e.V.</li>
-            <li>All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </section>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/supporter_request_confirmation.js"></script>
-  </body>
-</html>
+</section>

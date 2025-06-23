@@ -1,0 +1,14 @@
+{
+  "prettier.printWidth": 120,
+  "files.associations": {
+    "*.html": "liquid"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  }
+}

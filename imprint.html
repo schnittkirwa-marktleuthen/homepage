@@ -1,118 +1,65 @@
-<!DOCTYPE html>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
-    <title>Schnittkirwa Marktleuthen e.V.</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-  </head>
+---
+layout: default
+include_footer: true
+---
 
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
-        <h1><img src="images/logo_small.png" alt="" /><a href="/">Schnittkirwa Marktleuthen e.V.</a></h1>
-        <nav>
-          <a href="#menu">Menü</a>
-        </nav>
-      </header>
+<!-- Banner -->
+{% include banner.html title='Impressum' %}
 
-      <!-- Menu -->
-      <nav id="menu">
+<!-- Wrapper -->
+<section id="wrapper">
+    <!-- Content -->
+    <div class="wrapper">
         <div class="inner">
-          <h2>Menü</h2>
-          <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#one">Warum ist die Schnittkirwa ein Verein?</a></li>
-            <li><a href="/#two">Wer sind wir?</a></li>
-            <li><a href="/#three">Der Ablauf</a></li>
-            <li><a href="/#four">Unterstützer werden</a></li>
-            <li><a href="/#five">Bilder & Dokumente</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
+            <p>
+                {{ site.name }}
+                <br/>
+                {{ site.street }}
+                <br/>
+                {{ site.zip }} {{ site.city }}
+            </p>
+
+            <p>
+                Vereinsregister: VR200619
+                <br/>
+                Registergericht: Amtsgericht Hof
+            </p>
+
+            <p>
+                Vertreten durch:
+                <br/>
+                Sebastian Knöfel
+            </p>
+
+            <h2>Kontakt
+            </h2>
+            <p>
+                Telefon: {{ site.tel }}
+                <br/>
+                E-Mail: {{ site.email }}
+            </p>
+
+            <h2>Redaktionell verantwortlich
+            </h2>
+            <p>
+                Maximilian Sonntag
+                <br/>
+                Marktplatz 4
+                <br/>
+                {{ site.zip }} {{ site.city }}
+            </p>
+
+            <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle
+            </h2>
+            <p>
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+
+            <p>Quelle:
+                <a href="https://www.e-recht24.de">e-recht24.de
+                </a>
+            </p>
         </div>
-      </nav>
-
-      <!-- Wrapper -->
-      <section id="wrapper">
-        <header>
-          <div class="inner">
-            <h2>Impressum</h2>
-          </div>
-        </header>
-
-        <!-- Content -->
-        <div class="wrapper">
-          <div class="inner">
-            <p>
-              Schnittkirwa Marktleuthen e.V.<br />
-              Martin-Luther-Stra&szlig;e 34<br />
-              95168 Marktleuthen
-            </p>
-
-            <p>
-              Vereinsregister: VR200619<br />
-              Registergericht: Amtsgericht Hof
-            </p>
-
-            <p>
-              Vertreten durch:<br />
-              Sebastian Kn&ouml;fel
-            </p>
-
-            <h2>Kontakt</h2>
-            <p>
-              Telefon: +491629824691<br />
-              E-Mail: info@schnittkirwa.de
-            </p>
-
-            <h2>Redaktionell verantwortlich</h2>
-            <p>
-              Maximilian Sonntag<br />
-              Marktplatz 4<br />
-              95168 Marktleuthen
-            </p>
-
-            <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
-
-            <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="inner">
-          <ul class="copyright">
-            <li><a href="imprint.html">Impressum</a></li>
-            <li><a href="privacy-policy.html">Datenschutz</a></li>
-            <li>&copy; 2025 Schnittkirwa Marktleuthen e.V.</li>
-            <li>All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </section>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+</section>

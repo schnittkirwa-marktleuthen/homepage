@@ -1,217 +1,178 @@
-<!DOCTYPE html>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Schnittkirwa Marktleuthen e.V. – Traditionsfest in Marktleuthen</title>
-    <meta name="description" content="Unterstütze die Schnittkirwa Marktleuthen ohne Vereinsmitglied zu werden!" />
-    <meta
-      name="keywords"
-      content="Schnittkirwa, Marktleuthen, Verein, Traditionsfest, Mitgliedschaft, Unterstützer, Unterstützen, Bilder, Dokumente, Kontakt" />
-    <meta name="author" content="Schnittkirwa Marktleuthen e.V." />
-    <link rel="canonical" href="https://www.schnittkirwa.de/" />
-    <link rel="icon" href="images/logo_small.png" type="image/png" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.schnittkirwa.de/" />
-    <meta
-      property="og:title"
-      content="Schnittkirwa Marktleuthen e.V. – Unterstütze die Schnittkirwa Marktleuthen ohne Vereinsmitglied zu werden!" />
-    <meta property="og:image" content="images/logo_small.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta
-      property="og:description"
-      content="Formular ausfüllen & bestätigen, schon erhältst du Termine und Informationen zum Planungsstand von uns. Ganz unverbindlich und ohne Verpflichtungen oder Kosten." />
-    <meta property="og:image" content="https://www.schnittkirwa.de/images/logo_large.png" />
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Schnittkirwa Marktleuthen e.V. – Unterstütze die Schnittkirwa Marktleuthen ohne Vereinsmitglied zu werden!" />
-    <meta
-      name="twitter:description"
-      content="Formular ausfüllen & bestätigen, schon erhältst du Termine und Informationen zum Planungsstand von uns. Ganz unverbindlich und ohne Verpflichtungen oder Kosten." />
-    <meta name="twitter:image" content="https://www.schnittkirwa.de/images/logo_large.png" />
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Schnittkirwa Marktleuthen e.V.",
-        "url": "https://www.schnittkirwa.de/",
-        "logo": "https://www.schnittkirwa.de/images/logo_large.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "email": "info@schnittkirwa.de",
-            "contactType": "customer service"
-          }
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Martin-Luther-Straße 34",
-          "addressLocality": "Marktleuthen",
-          "postalCode": "95168",
-          "addressCountry": "DE"
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+---
+layout: default
+description: Unterstütze die Schnittkirwa Marktleuthen ohne Vereinsmitglied zu werden!
+og_title: Schnittkirwa Marktleuthen e.V. – Unterstütze die Schnittkirwa Marktleuthen ohne Vereinsmitglied zu werden!
+og_description: Formular ausfüllen & bestätigen, schon erhältst du Termine und Informationen zum Planungsstand von uns. Ganz unverbindlich und ohne Verpflichtungen oder Kosten.
+include_footer: true
+additional_scripts: |
+  <script src="assets/js/support_request.js"></script>
+---
 
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
-        <h1><img src="images/logo_small.png" alt="" /><a href="/">Schnittkirwa Marktleuthen e.V.</a></h1>
-        <nav>
-          <a href="#menu">Menü</a>
-        </nav>
-      </header>
+<!-- Banner -->
+{% include banner.html title='Unterstützer werden' subtitle='Ganz unverbindlich und ohne Mitglied zu werden' %}
 
-      <!-- Menu -->
-      <nav id="menu">
-        <div class="inner">
-          <h2>Menü</h2>
-          <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#one">Warum ist die Schnittkirwa ein Verein?</a></li>
-            <li><a href="/#two">Wer sind wir?</a></li>
-            <li><a href="/#three">Der Ablauf</a></li>
-            <li><a href="/#four">Unterstützer werden</a></li>
-            <li><a href="/#five">Bilder & Dokumente</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
-        </div>
-      </nav>
-
-      <!-- Wrapper -->
-      <section id="wrapper">
-        <header>
-          <div class="inner">
-            <h2>Unterstützer werden</h2>
-            <p>Ganz unverbindlich und ohne Mitglied zu werden</p>
-          </div>
-        </header>
-
-        <!-- Content -->
-        <div class="wrapper">
-          <div class="inner">
-            <p>
-              Wir freuen uns über jede Hilfe die wir kriegen können! Deshalb bieten wir natürlich auch die Möglichkeit
-              als Nicht-Mitglied ein Teil unserer Schnittkirwa zu werden.
-            </p>
-            <p>
-              Fülle hierzu einfach das untenstehende Formular aus und sende es ab. Im Anschluss erhältst du eine Email
-              zur Bestätigung. Nach erfolgreicher Bestätigung senden wir dir sobald Bedarf besteht wirchtige
-              Informationen zum Planungsstand, Termine und Hinweise zur Schichtplanung.
-            </p>
-            <p>
-              <strong>Wichtig:</strong> Du bist zu nichts verpflichtet auch wenn du dich als Unterstützer eingetragen
-              hast. Du selbst entscheidest wo, wann und wie du dich an unserer Schnittkirwa beteiligen möchtest. Wir
-              halten dich lediglich auf dem aktuellen Stand und kontaktieren bei akutem Personalmangel Personen in
-              dieser Liste.
-            </p>
-            <form id="form">
-              <div class="fields">
+<!-- Wrapper -->
+<div class="wrapper">
+    <!-- Content -->
+    <div class="inner">
+        <p>
+            Wir freuen uns über jede Hilfe die wir kriegen können! Deshalb bieten wir natürlich auch die
+            Möglichkeit als Nicht-Mitglied ein Teil unserer Schnittkirwa zu werden.
+        </p>
+        <p>
+            Fülle hierzu einfach das untenstehende Formular aus und sende es ab. Im Anschluss erhältst du eine
+            Email zur Bestätigung. Nach erfolgreicher Bestätigung senden wir dir sobald Bedarf besteht wirchtige
+            Informationen zum Planungsstand, Termine und Hinweise zur Schichtplanung.
+        </p>
+        <p>
+            <strong>Wichtig:
+            </strong>
+            Du bist zu nichts verpflichtet auch wenn du dich als Unterstützer eingetragen hast. Du selbst
+            entscheidest wo, wann und wie du dich an unserer Schnittkirwa beteiligen möchtest. Wir halten dich
+            lediglich auf dem aktuellen Stand und kontaktieren bei akutem Personalmangel Personen in dieser
+            Liste.
+        </p>
+        <form id="form">
+            <div class="fields">
                 <div class="field">
-                  <label for="name">Name*</label>
-                  <input type="text" name="name" id="name" required />
+                    <label for="name">Name*
+                    </label>
+                    <input
+                        id="name"
+                        name="name"
+                        required
+                        type="text" />
                 </div>
                 <div class="field">
-                  <label for="email">Email*</label>
-                  <input type="email" name="email" id="email" required />
+                    <label for="email">Email*
+                    </label>
+                    <input
+                        id="email"
+                        name="email"
+                        required
+                        type="email" />
                 </div>
                 <div class="field">
-                  <label for="email">Telefon/Mobil*</label>
-                  <input type="tel" pattern="^((\+49)|(0){1})[1-9][0-9]{1,14}$" name="tel" id="tel" required />
+                    <label for="email">Telefon/Mobil*
+                    </label>
+                    <input
+                        id="tel"
+                        name="tel"
+                        pattern="^((\+49)|(0){1})[1-9][0-9]{1,14}$"
+                        required
+                        type="tel" />
                 </div>
                 <div class="field">
-                  <label>In diesen Bereichen könnte ich unterstützen</label>
-                  <p>
-                    Wenn du dir nicht sicher bist musst du keine der folgenden Optionen wählen. Aber auch wenn du etwas
-                    wählst bist du nicht gezwungen genau dort zu helfen – es hilft uns nur bei der Planung.
-                  </p>
-                  <input type="checkbox" id="aufbau" name="aufbau" value="Aufbau" />
-                  <label for="aufbau">Aufbau</label><br />
-                  <input type="checkbox" id="abbau" name="abbau" value="Abbau" />
-                  <label for="abbau">Abbau</label><br />
-                  <input type="checkbox" id="bratwurststand" name="bratwurststand" value="Bratwurststand" />
-                  <label for="bratwurststand">Bratwurststand</label><br />
-                  <input type="checkbox" id="fisch_kaese" name="fisch_kaese" value="Fisch- & Käsestand" />
-                  <label for="fisch_kaese">Fisch- & Käsestand</label><br />
-                  <input type="checkbox" id="schenke" name="schenke" value="Schenke" />
-                  <label for="schenke">Schenke</label><br />
-                  <input type="checkbox" id="bar" name="bar" value="Bar" />
-                  <label for="bar">Bar</label><br />
-                  <input type="checkbox" id="kaffee_kuchen" name="kaffee_kuchen" value="Kaffee- & Kuchenausgabe" />
-                  <label for="kaffee_kuchen">Kaffee- & Kuchenausgabe</label><br />
-                  <input type="checkbox" id="kleinarbeiten" name="kleinarbeiten" value="Kleinarbeiten" />
-                  <label for="kleinarbeiten">Kleinarbeiten (Aufräumen, Müll sammeln, Einkäufe,...)</label><br />
+                    <label>In diesen Bereichen könnte ich unterstützen
+                    </label>
+                    <p>
+                        Wenn du dir nicht sicher bist musst du keine der folgenden Optionen wählen. Aber auch wenn du etwas
+                        wählst bist du nicht gezwungen genau dort zu helfen – es hilft uns nur bei der Planung.
+                    </p>
+                    <input
+                        id="aufbau"
+                        name="aufbau"
+                        type="checkbox"
+                        value="Aufbau" />
+                    <label for="aufbau">Aufbau
+                    </label>
+                    <br/>
+                    <input
+                        id="abbau"
+                        name="abbau"
+                        type="checkbox"
+                        value="Abbau" />
+                    <label for="abbau">Abbau
+                    </label>
+                    <br/>
+                    <input
+                        id="bratwurststand"
+                        name="bratwurststand"
+                        type="checkbox"
+                        value="Bratwurststand" />
+                    <label for="bratwurststand">Bratwurststand
+                    </label>
+                    <br/>
+                    <input
+                        id="fisch_kaese"
+                        name="fisch_kaese"
+                        type="checkbox"
+                        value="Fisch- & Käsestand" />
+                    <label for="fisch_kaese">Fisch- & Käsestand
+                    </label>
+                    <br/>
+                    <input
+                        id="schenke"
+                        name="schenke"
+                        type="checkbox"
+                        value="Schenke" />
+                    <label for="schenke">Schenke
+                    </label>
+                    <br/>
+                    <input
+                        id="bar"
+                        name="bar"
+                        type="checkbox"
+                        value="Bar" />
+                    <label for="bar">Bar
+                    </label>
+                    <br/>
+                    <input
+                        id="kaffee_kuchen"
+                        name="kaffee_kuchen"
+                        type="checkbox"
+                        value="Kaffee- & Kuchenausgabe" />
+                    <label for="kaffee_kuchen">Kaffee- & Kuchenausgabe
+                    </label>
+                    <br/>
+                    <input
+                        id="kleinarbeiten"
+                        name="kleinarbeiten"
+                        type="checkbox"
+                        value="Kleinarbeiten" />
+                    <label for="kleinarbeiten">Kleinarbeiten (Aufräumen, Müll sammeln, Einkäufe,...)
+                    </label>
+                    <br/>
                 </div>
                 <div class="field">
-                  <label for="message">Gibt es noch etwas das wir wissen sollen?</label>
-                  <textarea name="message" id="message" rows="4"></textarea>
+                    <label for="message">Gibt es noch etwas das wir wissen sollen?
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"></textarea>
                 </div>
                 <div class="field">
-                  <input
-                    type="checkbox"
-                    id="accept-privacy-policy"
-                    name="accept-privacy-policy"
-                    value="accept-privacy-policy"
-                    required />
-                  <label for="accept-privacy-policy"
-                    >Ich habe die
-                    <a style="color: #046480" href="privacy-policy.html">Datenschutzbestimmungen</a> gelesen und
-                    akzeptiere sie zur Übermittlung meiner Daten.*</label
-                  ><br />
+                    <input
+                        id="accept-privacy-policy"
+                        name="accept-privacy-policy"
+                        required
+                        type="checkbox"
+                        value="accept-privacy-policy" />
+                    <label for="accept-privacy-policy">Ich habe die
+                        <a href="privacy-policy.html" style="color: #046480">Datenschutzbestimmungen
+                        </a>
+                        gelesen und akzeptiere sie zur Übermittlung meiner
+                                                Daten.*
+                    </label>
+                    <br/>
                 </div>
-              </div>
-              <ul class="actions" style="gap: 1.25em">
+            </div>
+            <ul class="actions">
                 <li>
-                  <input id="request-submit-btn" type="submit" value="Nachricht senden" />
+                    <input
+                        id="request-submit-btn"
+                        type="submit"
+                        value="Nachricht senden" />
                 </li>
                 <progress
-                  style="visibility: hidden; align-self: center"
-                  id="progress-bar"
-                  aria-label="Content loading…"></progress>
-              </ul>
+                    aria-label="Content loading"
+                    id="progress-bar"
+                    style="visibility: hidden; align-self: center"></progress>
+            </ul>
 
-              <p>Mit * markierte Felder müssen ausgefüllt werden</p>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="inner">
-          <ul class="copyright">
-            <li><a href="imprint.html">Impressum</a></li>
-            <li>Datenschutz</li>
-            <li>&copy; 2025 Schnittkirwa Marktleuthen e.V.</li>
-            <li>All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </section>
+            <p>Mit * markierte Felder müssen ausgefüllt werden
+            </p>
+        </form>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/support_request.js"></script>
-  </body>
-</html>
+</div>

@@ -6,3 +6,11 @@ generic.html
 .firebaserc
 firebase.json
 .firebase
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+

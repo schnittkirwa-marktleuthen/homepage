@@ -1,0 +1,84 @@
+---
+layout: default
+description: Schnittkirwa 2025
+og_title: Schnittkirwa Marktleuthen e.V. – Schnittkirwa 2025
+og_description: Beste Partyband Deutschlands, neue Location, 3 Tage Festbetrieb!
+include_footer: true
+---
+
+<!-- Banner -->
+{% include banner.html title='Schnittkirwa 2025' subtitle='Beste Partyband Deutschlands, neue Location, 3 Tage Festbetrieb!' %}
+
+<!-- Wrapper -->
+<div class="wrapper clean">
+    <!-- One -->
+    {% comment %} BEGIN SECTION 1 {% endcomment %}
+    {% capture headline_1 %}
+      Samstag, 16.08.2025
+    {% endcapture %}
+    {% capture message_1 %} 
+      Für den Kirwaauftakt konnten wir ein absolutes Highlight organisieren! Ab 20:30 Uhr bis 01:30 Uhr heizen euch VOLXXBEAT richtig ein:
+      <ul style="direction: rtl;">
+        <li>
+            <strong>Beste Partyband Deutschlands 2023 & 2024</strong>
+        </li>
+        <li>
+            <strong>Bester Festzeltshowact 2022</strong>
+        </li>
+        <li>
+            <strong>Oktoberfestband der Bräurosl Festhalle</strong>
+        </li>
+        <li>
+            <strong>Bekannt von Oktoberfest München, Gäubodenfest Straubing, Salzburger Dult, Canstatter Wasen & vielen mehr</strong>
+        </li>
+      </ul>
+      Mit aufwändiger Bühnenshow, top Sound-, Licht- & Special-Effects-Anlage und einem musikalischen Portfolio das seinesgleichen sucht können wir exzellente Partystimmung garantieren!
+    {% endcapture %}
+    {% include home_section.html section_classes='wrapper spotlight style4' image_path='images/volxxbeat.png' headline=headline_1 message=message_1 %}
+    {% comment %} END SECTION 1 {% endcomment %}
+
+    <!-- Two -->
+    {% comment %} BEGIN SECTION 2 {% endcomment %}
+    {% capture headline_1 %}
+      Sonntag, 17.08.2025
+    {% endcapture %}
+    {% capture message_1 %} 
+      Der Kirwasonntag startet traditionell um 10:00 Uhr mit einem Weißwurstfrühschoppen – selbstverständlich freuen wir uns auch auf die Marktleuthener <strong>Egerhocker</strong>, die uns seit Jahrzehnten ausgelassene Stimmung und Trinkfreudigkeit in die heiligen Hallen bringen.
+      Ab 14:00 Uhr werden Kaffee & Kuchen von klassinger <strong>Krebsbacker Blasmusik</strong> bis in den Abend hinen begleitet.
+    {% endcapture %}
+    {% include home_section.html section_classes='wrapper alt spotlight style1' image_path='images/krebsbacker.png' headline=headline_1 message=message_1 %}
+    {% comment %} END SECTION 2 {% endcomment %}
+
+    <!-- Three -->
+    {% comment %} BEGIN SECTION 3 {% endcomment %}
+    {% capture headline_1 %}
+      Montag, 18.08.2025
+    {% endcapture %}
+    {% capture message_1 %} 
+      Nach bereits zwei Tagen Schnittkirwa in den Knochen starten wir mit unserem allseits bekannten und beliebten Alleinunterhalter <strong>Bernd Günther</strong> in den Kirwamontag und damit den Abschluss der Schnittkirwa 2025. Ab 18:00 begleitet das musikalische Multitalent die letzten Kirwastunden bis um 21:30 Uhr die große <strong>Tombola</strong> beginnt.
+      Neben vielen großen und kleinen Sachpreisen gibt es wie gewohnt ein ganzes Spanferkel als Hauptgewinn – mal abgesehen vom inoffiziellen Hauptgewinn, der natürlich auch wieder in vertrauenswürdige Hände übergehen wird 😉.
+    {% endcapture %}
+    {% include home_section.html section_classes='wrapper spotlight style2' image_path='images/tombola.jpg' headline=headline_1 message=message_1 %}
+    {% comment %} END SECTION 3 {% endcomment %}
+
+    <!-- Four -->
+    {% comment %} BEGIN SECTION 4 {% endcomment %}
+    {% capture headline_1 %}
+      Veranstaltungsinfos
+    {% endcapture %}
+    {% capture message_1 %} 
+        Veranstaltungsort ist dieses Jahr die <strong>Feldherrnhalle an der Maibaumwiese</strong> – mit Scheunenflair & Festzelt vereint wollen wir euch dieses Jahr etwas ganz Besonderes bieten!
+        Die Parkplätze sind wie üblich ausgeschildert und befinden sich hinter der Festhalle.
+        </br>
+        </br>
+        <a href="https://maps.app.goo.gl/HfvgBc9YyGz9KF366" target="_blank" style="color: #046480; " class="icon solid fa-map-pin">
+            <u>Feldherrnhalle an der Maibaumwiese, 95168 Marktleuthen</u>
+        </a>
+        </br>
+        <a href="{{ site.url }}assets/documents/schnittkirwa_2025.pdf" target="_blank" style="color: #046480; " class="icon solid fa-file-pdf">
+            <u>Veranstaltungsplakat</u>
+        </a>
+    {% endcapture %}
+    {% include home_section.html section_classes='wrapper spotlight style1 alt' image_path='images/tombola.jpg' headline=headline_1 message=message_1 %}
+{% comment %} END SECTION 4 {% endcomment %}
+</div>

@@ -9,13 +9,15 @@
             <p>
                 {{ include.message }}
             </p>
-            <a
-                {% if include.href %}
-                    href="{{ include.href  }}"
-                {% endif %}
-                class="special {% if include.link_classes %}{{ include.link_classes }}{% endif %}">
-                {{ include.link_text }}
-            </a>
+            {% if include.link_text %}
+                <a
+                    {% if include.href %}
+                        href="{{ include.href  }}"
+                    {% endif %}
+                    class="special {% if include.link_classes %}{{ include.link_classes }}{% endif %}">
+                    {{ include.link_text }}
+                </a>
+            {% endif %}
         </div>
     </div>
 </section>

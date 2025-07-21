@@ -25,6 +25,23 @@ additional_scripts: |
     <!-- One -->
     {% comment %} BEGIN SECTION 1 {% endcomment %}
     {% capture headline_1 %}
+      Schnittkirwa 2025
+    {% endcapture %}
+    {% capture message_1 %} 
+      Das Programm für unsere <strong>Schnittkirwa 2025</strong> steht – und kann sich weit über die Ortsgrenzen hinaus sehen lassen!
+      Beginnend mit der <strong>besten Partyband Deutschlands</strong> am Samstag bis zur großen Tombola mit Spanferkel (und anderen Preisen 😉) geht es dieses Jahr drei Tage lang in neuer Lokalität zugange.
+    {% endcapture %}
+
+    {% include home_section.html id='event_2025' section_classes='wrapper spotlight style1' image_path='images/2025_blur.jpg'
+ headline=headline_1
+ message=message_1
+ href='schnittkirwa-2025.html'
+ link_text='Zum Programm' %}
+    {% comment %} END SECTION 1 {% endcomment %}
+
+    <!-- Two -->
+    {% comment %} BEGIN SECTION 2 {% endcomment %}
+    {% capture headline_1 %}
       Warum ist die Schnittkirwa ein Verein?
     {% endcapture %}
     {% capture message_1 %} 
@@ -34,15 +51,15 @@ additional_scripts: |
       entsprechend gegenwirken. 
     {% endcapture %}
 
-    {% include home_section.html id='one' section_classes='wrapper spotlight style1' image_path='images/logo_large.png'
+    {% include home_section.html id='why_club' section_classes='wrapper alt spotlight style2' image_path='images/logo_large.png'
  headline=headline_1
  message=message_1
  link_classes='disabled-link'
  link_text='Mehr erfahren (kommt bald)' %}
-    {% comment %} END SECTION 1 {% endcomment %}
+    {% comment %} END SECTION 2 {% endcomment %}
 
-    <!-- Two -->
-    {% comment %} BEGIN SECTION 2 {% endcomment %}
+    <!-- Three -->
+    {% comment %} BEGIN SECTION 3 {% endcomment %}
     {% capture headline_2 %}
       Wer sind wir?
     {% endcapture %}
@@ -53,17 +70,17 @@ additional_scripts: |
     {% endcapture %}
 
     {% include home_section.html
- id='two' section_classes='wrapper alt spotlight style2'
+ id='who_are_we' section_classes='wrapper spotlight style3'
  image_path='images/vorstand.jpg'
  headline=headline_2
  message=message_2
  link_classes='disabled-link'
  link_text='Die Vorstandschaft (kommt bald)' %}
-    {% comment %} END SECTION 2 {% endcomment %}
+    {% comment %} END SECTION 3 {% endcomment %}
 
 
-    <!-- Three -->
-    {% comment %} BEGIN SECTION 3 {% endcomment %}
+    <!-- Four -->
+    {% comment %} BEGIN SECTION 4 {% endcomment %}
     {% capture headline_3 %}
       Der Ablauf
     {% endcapture %}
@@ -76,16 +93,16 @@ additional_scripts: |
     {% endcapture %}
 
     {% include home_section.html
- id='three' section_classes='wrapper spotlight style3'
+ id='program' section_classes='wrapper alt spotlight style2'
  image_path='images/kirwa_generic.jpg'
  headline=headline_3
  message=message_3
  link_classes='disabled-link'
  link_text='Zum Programm (kommt bald)' %}
-    {% comment %} END SECTION 3 {% endcomment %}
+    {% comment %} END SECTION 4 {% endcomment %}
 
-    <!-- Four -->
-    {% comment %} BEGIN SECTION 4 {% endcomment %}
+    <!-- Five -->
+    {% comment %} BEGIN SECTION 5 {% endcomment %}
     {% capture headline_4 %}
       Unterstützer werden
     {% endcapture %}
@@ -96,16 +113,16 @@ additional_scripts: |
     {% endcapture %}
 
     {% include home_section.html
- id='four' section_classes='wrapper alt spotlight style2'
+ id='supporter' section_classes='wrapper spotlight style3'
  image_path='images/team.jpg'
  headline=headline_4 
  message=message_4
  link_text='Unterstützer werden'
  href='supporters.html' %}
-    {% comment %} END SECTION 4 {% endcomment %}
+    {% comment %} END SECTION 5 {% endcomment %}
 
-    <!-- Five -->
-    <section class="wrapper style1" id="five">
+    <!-- Six -->
+    <section class="wrapper style1 alt" id="images_documents">
         <div class="inner">
             <h2 class="major">
                 Bilder & Dokumente
@@ -119,19 +136,31 @@ additional_scripts: |
             </p>
             <section class="features">
                 <article>
-                    <a class="image" href="#">
-                        <img alt="" src="images/behind_the_zapfhahn.jpeg" />
+                    <a
+                        class="image"
+                        href="{{ site.url }}assets/documents/mitgliedsantrag_schnittkirwa_marktleuthen_ev.pdf"
+                        target="_blank">
+                        <img
+                            alt=""
+                            id="pdf"
+                            src="images/schnittkirwa_2025.jpg" />
                     </a>
                     <h3 class="major">
-                        Behind the Zapfhahn
+                        Schnittkirwa 2025
                     </h3>
                     <p>
-                        Ein paar Eindrücke unserer vergangenen Feste, mit exklusiven Einblicken hinter die Kulissen! Denn
-                        Schnittkirwa macht nicht nur als Gast, sondern auch als aktiver Helfer Spaß – einfach mal
-                        reinschauen und inspirieren lassen ;)
+                        Unsere Schnittkirwa 2025 findet vom 16.08.2025 bis 18.08.2025 statt. Sieh dir hier unser
+                        Veranstaltungsplakat an, oder gehe direkt zum
+                        <u>
+                            <a href="schnittkirwa-2025.html">Kirwaprogramm
+                            </a>
+                        </u>
                     </p>
-                    <a class="special disabled-link">
-                        Bilder ansehen (kommt bald)
+                    <a
+                        class="special"
+                        href="{{ site.url }}assets/documents/schnittkirwa_2025.pdf"
+                        target="_blank">
+                        Veranstaltungsplakat herunterladen
                     </a>
                 </article>
                 <article>
@@ -159,12 +188,27 @@ additional_scripts: |
                         Mitgliedsantrag herunterladen
                     </a>
                 </article>
+                <article>
+                    <a class="image" href="#">
+                        <img alt="" src="images/behind_the_zapfhahn.jpeg" />
+                    </a>
+                    <h3 class="major">
+                        Behind the Zapfhahn
+                    </h3>
+                    <p>
+                        Ein paar Eindrücke unserer vergangenen Feste, mit exklusiven Einblicken hinter die Kulissen! Denn
+                        Schnittkirwa macht nicht nur als Gast, sondern auch als aktiver Helfer Spaß – einfach mal
+                        reinschauen und inspirieren lassen ;)
+                    </p>
+                    <a class="special disabled-link">
+                        Bilder ansehen (kommt bald)
+                    </a>
+                </article>
             </section>
         </div>
     </section>
 </section>
 
-<!-- Footer -->
 <section id="footer">
     <div class="inner">
         {% capture contact_form %}
